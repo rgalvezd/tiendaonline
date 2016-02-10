@@ -3,7 +3,6 @@ require_once 'lib/Controller.php';
 
 class Index extends Controller
 {
-
     public function __construct()
     {
         parent::__construct('Index');
@@ -19,6 +18,4 @@ class Index extends Controller
         $this->view->render();
 
     }
-
-
 }

@@ -1,0 +1,126 @@
+body {
+    background: silver;
+    font: 14px 'trebuchet ms', arial, sans-serif;
+    margin: auto;
+    padding: 0.5em;
+    width: 50em;
+}
+
+/** Structure */
+#header {
+    padding: 1em ;
+    padding-bottom: 2em;
+    height: auto;
+    background: #436fac   ;
+    color: #fff;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: 4px solid   #4d8add;
+}
+#title {
+    padding: 0.4em;
+    font-size: 2em;
+    text-align: center;
+}
+
+#content {
+    background: #fff;
+    padding: 2em;
+}
+
+#footer {
+    background: #436fac;
+    color: #fff;
+    padding: 1em;
+    border-top: 4px solid #4d8add;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+/* Links */
+#header a {
+    color: #fff;
+    background: #234f8c;
+    padding: 4px 15px;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bolder;
+}
+
+#header a:hover {
+    background: #4d8add
+}
+
+/** Forms */
+form {
+    font: 100% verdana,arial,sans-serif;
+}
+
+form label { 
+    display: block;
+    float: left; 
+    width: 150px; 
+    padding: 0; 
+    margin: 9px 0 0;
+    text-align: right; 
+}
+
+form input, form select {
+    width: 15em;
+    margin: 5px 0 0 10px;
+    border: 1px solid gray;
+    padding: 4px;
+}
+
+form input[type=submit]:hover {
+    cursor: pointer;
+    background: silver;
+}
+
+
+form br {clear: left;}
+
+div.boton{
+    margin-right: 3px;
+    background:  #234f8c;
+    width: 5em;
+    float: left;
+    border: solid black 1px;
+    text-align: center; 
+}
+
+pre {
+    white-space: pre-wrap;       /* CSS 3 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+tr td{
+    border-bottom: 1px solid #ddd;    
+}
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #638fcc;    
+    color: white;
+}
+
+ tr:hover {background-color: #bbe}
+ 
+ span.error{
+    color: red;
+    font-size: 50%;
+ }

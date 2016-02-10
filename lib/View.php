@@ -1,11 +1,9 @@
 <?php
 require_once 'smarty/libs/Smarty.class.php';
-require_once 'lib/Lang.php';
 
 class View{
     public $smarty;
     private $_method;
-    public $lang;
             
             
     
@@ -29,8 +27,6 @@ class View{
         $this->smarty->compile_dir = 'tmp';
         
         //asignar variables para las cabeceras/pies
-        $this->smarty->assign('lang', $_SESSION['lang']);
-        $this->smarty->assign('language', $this->lang);
         $this->smarty->assign('url', Config::URL);
 //        echo 'En la Vista padre <br>';
     }    

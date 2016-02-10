@@ -14,7 +14,7 @@ class Acl{
         ),
         
         'user' => array(
-            'index' => 2,
+            'index' => 0,
             'add' => 2,
             'edit' => 2,
             'delete' => 2,

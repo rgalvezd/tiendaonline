@@ -24,10 +24,8 @@ class SecureController
             throw new Exception('Método no disponible', 404);            
         }
         if ($this->acl->isAllowed(get_class($this->target), $method, $_SESSION['accessLevel'] )) {
-//            $msg = 'voy a llamar al método ' . $method . ' del objeto ' . get_class($this->target) ;
+            $msg = 'voy a llamar al método ' . $method . ' del objeto ' . get_class($this->target) ;
             
-//            var_dump($msg);
-//            var_dump($arguments);
             return call_user_func_array(
                     array($this->target, $method), $arguments
             );

@@ -12,19 +12,13 @@ class Boot
         
         $url = $this->_getUrl();
         
-        $lang = array_shift($url);        
         session_start();
-        $this->_setLanguage($lang);
         
-        if(!isset($_SESSION['accessLevel'])){
-            $_SESSION['accessLevel']=0;
+//        if(!isset($_SESSION['accessLevel'])){
+//            $_SESSION['accessLevel']=1;
 //            $_SESSION['user']='Anonymous';
-        }      
+//        }      
         
-        
-                
-//        $_SESSION['user']=".....";
-//        $_SESSION['idUser']=2;
                 
         try {
             $this->_loadController($url);
@@ -38,37 +32,28 @@ class Boot
     private function _getUrl(){
         if (isset($_GET['url'])) {
             $url = $_GET;
-            $url = rtrim($_GET['url'], "/");
+           $url = rtrim($_GET['url'], "/");
             $url = explode("/", $url);
         } else {
-            
-            $url[] = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0, 2);            
             $url[] = 'index';
         }
-        return $url;
-    }
-    
-    private function _setLanguage($lang)
-    {
-        $file = 'lang/' . $lang . '.php';
-        if(!file_exists($file)){
-            $lang = Config::DEFAULT_LANG;
-        }
         
-        $_SESSION['lang'] = $lang;
+        
+        return $url;
     }
     
     private function _loadController($url)
     {
+//        var_dump($url);
         $controller = ucfirst($url[0]);
         $fileController = 'controller/' . $controller . '.php';
 
         if (!file_exists($fileController)) {
             throw new Exception('Controlador no disponible', 404);            
         }
+
         require_once $fileController;
         $app = new $controller;
-        
         $app = new SecureController($app);
 
         $this->_callMethod($app, $url);        
