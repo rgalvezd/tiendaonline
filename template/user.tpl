@@ -1,9 +1,9 @@
 {include file="template/header.tpl" title="encabezado"}
 <div id="content">
     <br>
-    <h2>{'user_list'}</h2>
+    <h2>Lista de usuarios</h2>
     
-    <p><a href="{$url}/user/add">{'new_user'}</a></p>
+    <p><a href="{$url}/user/add">Crear usuario</a></p>
     <table>
         <tr>
             <th>Id</th>
@@ -20,14 +20,14 @@
                 <td>{$row.password}</td>
                 <td>{$row.role}</td>
                 <td>
-                    <a href="{$url}/user/edit/{$row.id}" >editar</a>
-                    <a href="{$url}/user/delete/{$row.id}" >borrar</a>                    
+                    <a href="{$url}user/edit/{$row.id}" >editar</a>
+                    <a href="{$url}user/delete/{$row.id}" >borrar</a>                    
                 </td>
             </tr>
         {/foreach}
     </table>
     
-    <p><a href="{$url}/user/add">{'new_user'}</a></p>
+    <p><a href="{$url}/user/add">Crear usuario</a></p>
 
  </div>
 {include file="template/footer.tpl" title="footer"}

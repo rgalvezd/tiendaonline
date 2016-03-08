@@ -26,6 +26,9 @@ class View{
         $this->smarty->template_dir = 'template';
         $this->smarty->compile_dir = 'tmp';
         
+        $this->smarty->assign('role', $_SESSION['role']);
+        $this->smarty->assign('userLog', $_SESSION['userLog']);
+        
         //asignar variables para las cabeceras/pies
         $this->smarty->assign('url', Config::URL);
 //        echo 'En la Vista padre <br>';

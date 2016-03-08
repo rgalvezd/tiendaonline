@@ -14,12 +14,13 @@ class Boot
         
         session_start();
         
-//        if(!isset($_SESSION['accessLevel'])){
-//            $_SESSION['accessLevel']=1;
-//            $_SESSION['user']='Anonymous';
-//        }      
+        if(!isset($_SESSION['userLog'])){
+            $_SESSION['role']=1;
+            $_SESSION['userLog']="Invitado";
+        }      
         
-                
+//        echo 'Role ' . $_SESSION['role'];
+        
         try {
             $this->_loadController($url);
         } catch (Exception $ex) {
@@ -51,9 +52,11 @@ class Boot
         if (!file_exists($fileController)) {
             throw new Exception('Controlador no disponible', 404);            
         }
-
+//        echo 'por aqui con filecontroller ' . $fileController . '<br>';
         require_once $fileController;
+//    echo 'por aqui con controller ' . $controller .'<br>';
         $app = new $controller;
+//        echo 'sigo';
         $app = new SecureController($app);
 
         $this->_callMethod($app, $url);        

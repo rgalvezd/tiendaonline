@@ -14,16 +14,18 @@ class SecureController
 
     public function __construct($target)
     {
+//        echo 'por construct secure <br>';
         $this->target = $target; //Controlador envuelto
         $this->acl = new Acl; //acl con los permisos
     }
 
     public function __call($method, $arguments)
     {
+//        echo '_call secure <br>';
         if(!method_exists( $this->target, $method )){
             throw new Exception('Método no disponible', 404);            
         }
-        if ($this->acl->isAllowed(get_class($this->target), $method, $_SESSION['accessLevel'] )) {
+        if ($this->acl->isAllowed(get_class($this->target), $method, $_SESSION['role'] )) {
             $msg = 'voy a llamar al método ' . $method . ' del objeto ' . get_class($this->target) ;
             
             return call_user_func_array(

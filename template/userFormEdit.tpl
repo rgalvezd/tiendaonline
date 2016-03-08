@@ -18,8 +18,6 @@
         </select> 
         
         <br>
-
-
         
         <label>Password</label><input type="password" name="password"> 
         <span class="error">{$error.password}</span> <br>

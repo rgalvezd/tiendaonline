@@ -29,13 +29,19 @@ class User extends Controller
     {
         $row = $_POST;  
         $row['password'] = md5($row['password']);
-        $this->model->insert($row);    
-        header('Location: ' . Config::URL . $_SESSION['lang'] . '/user/index');
+        $this->model->insert($row); 
+        if($row['user'] == 'admin'){
+            header('Location: ' . Config::URL . '/user/index');
+        } else {
+            $_SESSION['autologin'] = 'si';
+            $_SESSION['userToValidate'] = $_POST;
+            header('Location: ' . Config::URL . '/login/login');
+        }
     }
     public function delete($id)
     {
         $this->model->delete($id);    
-        header('Location: ' . Config::URL . $_SESSION['lang'] . '/user/index');
+        header('Location: ' . Config::URL . '/user/index');
     }
     
     public function edit($id, $error="")
@@ -56,7 +62,7 @@ class User extends Controller
         else{
             $row['password'] = md5($row['password']);
             $this->model->update($row);    
-            header('Location: ' . Config::URL . $_SESSION['lang'] . '/user/index');
+            header('Location: ' . Config::URL . '/user/index');
         }
     }
     

@@ -1,6 +1,6 @@
 <?php
 abstract class Config{
-    const URL = 'http://localhost:82/tiendaonline/';   
+    const URL = 'http://localhost/tiendaonline/';   
     const DBHOST = 'localhost';
     const DBUSER = 'alumno';
     const DBPASSWORD = 'alumno';

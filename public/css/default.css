@@ -3,7 +3,7 @@ body {
     font: 14px 'trebuchet ms', arial, sans-serif;
     margin: auto;
     padding: 0.5em;
-    width: 50em;
+    width: 80%  ;
 }
 
 /** Structure */
@@ -123,4 +123,57 @@ th {
  span.error{
     color: red;
     font-size: 50%;
+ }
+ #sections {
+     float: left;
+ }
+ *
+ #cart {
+     float: right;
+ }
+ #pages{
+     margin: 2% auto;
+     
+     text-align: center;
+ }
+ 
+ .pages{
+     width: 40px;
+     height: 20px;
+     color: white;
+     background-color: #234f8c;
+ }
+ 
+ .pActive{
+    background-color: black;
+ }
+ 
+ .borrar{
+     width: 40%;
+     color: white;
+     background-color: red;
+ }
+ 
+ .editar{
+     margin-left: 10%;
+     width: 40%;
+     color:white;
+     background-color: orange;
+ }
+ 
+ .buy{
+     margin-left: 10%;
+     width: 50%;
+     color: white;
+     background-color: lightseagreen;
+ }
+ 
+ #nuevoProducto{
+     width: 90%;
+     color: white;
+     background-color: green;
+ }
+ 
+ .center{
+     text-align: center;
  }

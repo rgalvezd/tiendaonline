@@ -7,9 +7,10 @@ class LoginView extends View{
         parent::__construct();
     }
     
-    public function render($template='login.tpl')
+    public function render($error)
     {
-        $this->smarty->assign('method', $this->getMethod());
+        $template='login.tpl';
+        $this->smarty->assign('error', $error);
         $this->smarty->display($template);
     }
 }

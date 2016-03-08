@@ -33,12 +33,12 @@ class UserModel extends Model{
         return $this->_rows;
     }
 
-    public function insert($fila)
+    public function insert($row)
     {
         $this->_sql = "INSERT INTO usuario(nombre, password, idRole) "
-                . "VALUES ('$fila[name]',"
-                . " '$fila[password]',"
-                . " '$fila[idRole]')";
+                . "VALUES ('$row[name]',"
+                . " '$row[password]',"
+                . " '$row[idRole]')";
 
         $this->executeQuery();
     }
